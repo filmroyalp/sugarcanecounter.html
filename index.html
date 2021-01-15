@@ -1,0 +1,183 @@
+<h class="tes">Sugarcane Clicker</h><br>
+<html>
+<head>
+  <meta name="google-signin-client_id" content="978711208477-599fvpenc24eug43g9l5qbj1d2herv49.apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
+<button onclick="myFunction()" class="myimage">
+<img width="200" height="200" float="center" src="https://www.gardeningknowhow.com/wp-content/uploads/2018/07/sugarcane-variety.jpg"><br>
+</button>
+<a class="test">click on the image to get free sugarcane!!!!</a><br>
+<a class="test">your current sugarcane = <span id="myText"></span></a><br>
+<h class="shop">shop</h><br>
+
+<div class="popup  button1 button" onclick="Functionshop1()">Buy image drawn by me
+  <span class="popuptext" id="myPopup">click here to download <a href="https://cdn.discordapp.com/attachments/794972263790280744/799311964547448852/unknown.png" download>aoy</a></span>
+</div>
+<style>
+    .test{
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+.body {
+  margin: 0;
+}
+body {font-family: Verdana, sans-serif; margin:0}
+button{border: 0}
+.button2 {
+  padding: 0;
+border: none;
+background: none;
+text-align: center;
+}
+.tes {
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: green;
+  font-size: 50px;
+  text-align: top;
+  width: 100%;
+  margin: auto;
+  border: 3px solid #73AD21;
+  display: block;
+       
+}
+.myimage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+ .shop {
+   font-size: 25px;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   margin: auto;
+ }
+ .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: green;} 
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+.popup2 {
+  background-color: green;
+}
+</style>
+<script>
+    var count = 0;
+
+function myFunction() {
+
+
+  count = count + 1;
+  console.log(count)
+  var number = count;
+  document.getElementById("myText").innerHTML = number;
+  if(count === 100){
+  alert("yoo you got 100 sugarcane congrats")
+  }
+
+}
+function Functionshop1() {
+if (count > "99") {
+alert("purchase successfully")
+count = 0
+myFunction23();
+}else if(count < "99") {
+
+alert("YOU DON'T HAVE Enough money")
+return 0;
+}
+
+
+}
+
+
+function myFunction23() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+
+
+</script>
