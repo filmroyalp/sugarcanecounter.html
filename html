@@ -1,0 +1,40 @@
+<h class="tes">Sugarcane Clicker</h><br>
+<html>
+<head>
+  <meta name="google-signin-client_id" content="978711208477-599fvpenc24eug43g9l5qbj1d2herv49.apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
+<button onclick="myFunction()" class="myimage">
+<img width="200" height="200" float="center" src="https://www.gardeningknowhow.com/wp-content/uploads/2018/07/sugarcane-variety.jpg"><br>
+</button>
+<a class="test">click on the image to get free sugarcane!!!!</a><br>
+<a class="test">your current sugarcane = <span id="myText"></span></a><br>
+<h class="shop">shop</h><br>
+
+<div class="popup  button1 button" onclick="Functionshop1()">Buy image drawn by me
+  <span class="popuptext" id="myPopup">click here to download <a href="https://cdn.discordapp.com/attachments/794972263790280744/799311964547448852/unknown.png" download>aoy</a></span>
+</div>

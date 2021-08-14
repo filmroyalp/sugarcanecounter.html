@@ -1,20 +1,54 @@
+
 <h class="tes">Sugarcane Clicker</h><br>
-
-
+<html>
+<article onclick="character();">
   
+  <script>
+    number = 0;
+  var animations = 'https://cdn.discordapp.com/attachments/800061162774331406/876161014813589574/ezgif-5-32eb6f78916f.gif'
+  localStorage.setItem('clickcount', 0);
 
 
-<button onclick="myFunction()" class="myimage">
-<img width="200" height="200" float="center" src="https://www.gardeningknowhow.com/wp-content/uploads/2018/07/sugarcane-variety.jpg"><br>
-</button>
-<a class="test">click on the image to get free sugarcane!!!!</a><br>
-<a class="test">your current sugarcane = <span id="myText"></span></a><br>
-<h class="shop">shop</h><br>
+ var refreshIntervalId = setInterval(function() {
+  image = document.getElementById('hiddenimageid');
+  image.src = animations
+  
+},1)
 
+
+function character() {
+clearInterval(refreshIntervalId);
+
+  image = document.getElementById('hiddenimageid');
+  image.src = animations
+  var audio = document.getElementById("audio");
+  count = count + 1;
+  audio.currentTime = 0;
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = sessionStorage.clickcount
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+  audio.play();
+}
+  </script>
+
+  <div style="float:center" class="container">
+    <img src="sugarcane.gif" id="hiddenimageid"alt="Sugarcane"style="width:100%; height:100%" />
+    <div style="font-size: 80px;"id="result"  class="top"></div>
+    <audio id="audio" src="popcat2.wav"></audio>
+  </div>
+  <h class="shop">shop</h><br>
 <div class="popup  button1 button" onclick="Functionshop1()">Buy image drawn by me
   <span class="popuptext" id="myPopup">click here to download <a href="https://cdn.discordapp.com/attachments/794972263790280744/799311964547448852/unknown.png" download>aoy</a></span>
 </div>
 <style>
+
     .test{
   color: black;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -23,6 +57,17 @@
 .body {
   margin: 0;
 }
+.top {
+  position: absolute;
+  top: 8px;
+  left: 45%;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 body {font-family: Verdana, sans-serif; margin:0}
 button{border: 0}
 .button2 {
@@ -123,18 +168,7 @@ text-align: center;
 <script>
     var count = 0;
 
-function myFunction() {
 
-
-  count = count + 1;
-  console.log(count)
-  var number = count;
-  document.getElementById("myText").innerHTML = number;
-  if(count === 100){
-  alert("yoo you got 100 sugarcane congrats")
-  }
-
-}
 function Functionshop1() {
 if (count > "99") {
 alert("purchase successfully")
@@ -157,3 +191,4 @@ function myFunction23() {
 
 
 </script>
+</html>
