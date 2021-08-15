@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body onload="loadData()">
+        <div id='test'></div>
+        <form>
+
+        </form>
+
+
+    </body>
+</html>
+<script>
+    function loadData() {
+  fetch("https://api.apispreadsheets.com/data/16919/").then(res=>{
+	if (res.status === 200){
+		// SUCCESS
+		res.json().then(data=>{
+			const yourData = data
+            console.log(data)
+            document.getElementById("test").innerHTML = data
+		}).catch(err => console.log(err))
+        
+    
+	}
+	else{
+		// ERROR
+	}
+})
+}
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Nunito';
+    }
+    .top {
+        position: absolute;
+        top: 8px;
+        left: 45%;
+    }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+</style>
+<noscript>
+    <strong>Sugarcane Clicker don't without JavaScript enabled. Please enable it.</strong>
+</noscript>
+<script>
+    
+    
+    src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"
+    number = 0;
+  var animations = 'https://cdn.discordapp.com/attachments/800061162774331406/876161014813589574/ezgif-5-32eb6f78916f.gif'
+  localStorage.setItem('clickcount', 0);
+
+
+ var refreshIntervalId = setInterval(function() {
+  image = document.getElementById('hiddenimageid');
+  image.src = animations
+  
+},1)
+function character() {
+clearInterval(refreshIntervalId);
+  var count = 0;
+
+  image = document.getElementById('hiddenimageid');
+  image.src = animations
+  var pull=JSON.parse(localStorage.getItem('data'))
+  var audio = document.getElementById("audio");
+  count = count + 1;
+  audio.currentTime = 0;
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = sessionStorage.clickcount
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+  audio.play();
+}
+function loadcount() {
+  document.getElementById("result").innerHTML = sessionStorage.clickcount
+}
+</script>
+
+<html>
+    <body onload="loadcount();">
+        <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+        <body>
+            <div style="float:center" class="container">
+                <img src='sugarcane1.jpg' id="hiddenimageid"alt="Sugarcane"style="width:100%"; onclick="character();">
+                <audio id="audio" src="popcat2.wav"></audio>
+                <div style="font-size: 80px;"id="result" class="top"></div>
+            </div>
+        </body>
+    </body>
+
+</html>
+
